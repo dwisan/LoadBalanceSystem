@@ -20,22 +20,19 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 ```
 nano /etc/nginx/sites-available/example.com
 
-add:
-
 upstream mywebapp1 {
-    server 10.130.227.11;
-    server 10.130.227.22;
+    ip_hash;
+    server 1.1.1.1;
+    server 2.2.2.2;
 }
 
 server {
-    listen 80;
     listen 443 ssl;
     server_name example.com www.example.com;
 
     ssl on;
     ssl_certificate         /etc/nginx/ssl/example.com/server.crt;
     ssl_certificate_key     /etc/nginx/ssl/example.com/server.key;
-    ssl_trusted_certificate /etc/nginx/ssl/example.com/ca-certs.pem;
 
     ssl_session_cache shared:SSL:20m;
     ssl_session_timeout 10m;
