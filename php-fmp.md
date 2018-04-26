@@ -8,15 +8,19 @@ listen = 127.0.0.1:2999
 
 listen.allowed_clients = 127.0.0.1
 
-
 ; Default Unlimited
 pm.max_requests = 600
 
 ;Default equal System Defined value
-;rlimit_files = xxxx
+;rlimit_files = 1024
 
 ;Default equal unlimited
 ;rlimit_core = unlimited
+
+request_slowlog_timeout = 5s
+slowlog = /var/log/php-fpm-www.log
+
+catch_workers_output = yes
 
 ****** case : pm = dynamic *******
 pm = dynamic
