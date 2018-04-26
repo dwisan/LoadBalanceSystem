@@ -8,11 +8,6 @@ listen = 127.0.0.1:2999
 
 listen.allowed_clients = 127.0.0.1
 
-; Default Unlimited
-; recommanded : use ab tools to find 
-; which kills and respawns processes after handling a certain number of requests
-pm.max_requests = 600
-
 ;Default equal System Defined value
 ;rlimit_files = 1024
 
@@ -27,6 +22,11 @@ catch_workers_output = yes
 ****** case : pm = dynamic *******
 pm = static
 pm.max_children = 135
+
+; Default Unlimited
+; recommanded : use ab tools to find 
+; which kills and respawns processes after handling a certain number of requests
+pm.max_requests = 600
 
 ****** case : pm = dynamic *******
 pm = dynamic
@@ -44,6 +44,11 @@ pm.min_spare_servers = 4
 ; recommended : (cpu cores * 4)
 pm.max_spare_servers = 8
 
+; Default Unlimited
+; recommanded : use ab tools to find 
+; which kills and respawns processes after handling a certain number of requests
+pm.max_requests = 600
+
 ****** case : pm = ondemand *******
 pm = ondemand
 
@@ -53,6 +58,11 @@ pm.max_children = 135
 
 ; Default 10s
 pm.process_idle_timeout = 10s
+
+; Default Unlimited
+; recommanded : use ab tools to find 
+; which kills and respawns processes after handling a certain number of requests
+pm.max_requests = 600
 
 ```
 - [x] Set open file descriptor rlimit (Default Value: system defined value)
