@@ -31,7 +31,7 @@ pm.max_requests = 600
  [x] System Defined value checking
  
  # cat /proc/{php-fpm}/limits
- exam.
+ 
  # cat /proc/1133/limits
  Limit            Soft Limit    Hard Limit     Units 
  ....
