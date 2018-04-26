@@ -3,6 +3,7 @@
 ;The default value for this file, 32768, 
 ;results in the same range of PIDs as on earlier kernels (<=2.4). 
 ;The value in this file can be set to any value up to 2^22 (PID_MAX_LIMIT, approximately 4 million). 
+; Value 4194303 is the maximum limit for x86_64 and 32767 for x86.
 
 # sysctl kernel.pid_max 
 or
