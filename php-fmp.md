@@ -30,4 +30,30 @@ pm.max_requests = 600
 ```
  [x] System Defined value checking
  
+ # cat /proc/{php-fpm}/limits
+ exam.
+ # cat /proc/1133/limits
+ Limit            Soft Limit    Hard Limit     Units 
+ ....
+ Max open files     1024           4096        files
+ ....
+ 
+ [x] Set more than 4096
+ 
+ # mkdir /etc/systemd/system/php7.0-fpm.service.d
+ # nano /etc/systemd/system/php7.0-fpm.service.d/local.conf
+ 
+ [Service]
+ LimitNOFILE=100000
+ 
+ # systemctl daemon-reload
+ # /etc/init.d/php7.0-fpm restart
+ 
+ [x] System Defined value checking after edit
+ 
+ # cat /proc/1133/limits
+ Limit            Soft Limit    Hard Limit     Units 
+ ....
+ Max open files     100000           100000        files
+ ....
 ```
