@@ -29,10 +29,14 @@ pm = dynamic
 ; example pm.max_children = 2700MB/20MB 
 pm.max_children = 135
 
-; Default Value: min_spare_servers + (max_spare_servers - min_spare_servers) / 2
-pm.start_servers = 30
-pm.min_spare_servers = 20
-pm.max_spare_servers = 40
+; recommended : (cpu cores * 4)
+pm.start_servers = 8
+
+; recommended : (cpu cores * 2)
+pm.min_spare_servers = 4
+
+; recommended : (cpu cores * 4)
+pm.max_spare_servers = 8
 
 ****** case : pm = ondemand *******
 pm = ondemand
