@@ -8,10 +8,21 @@ listen = 127.0.0.1:2999
 
 listen.allowed_clients = 127.0.0.1
 
+
+; Default Unlimited
+pm.max_requests = 600
+
+;Default equal System Defined value
+;rlimit_files = xxxx
+
+;Default equal unlimited
+;rlimit_core = unlimited
+
 ****** case : pm = dynamic *******
 pm = dynamic
 
-; pm.max_children = all_memory - 1024/mem_per_process using htop monitor
+; pm.max_children = all_memory_for_php/mem_per_process (using htop monitor)
+; example pm.max_children = 2700MB/20MB 
 pm.max_children = 135
 
 ; Default Value: min_spare_servers + (max_spare_servers - min_spare_servers) / 2
@@ -19,18 +30,16 @@ pm.start_servers = 30
 pm.min_spare_servers = 20
 pm.max_spare_servers = 40
 
-; Default Unlimited
-pm.max_requests = 600
-
 ****** case : pm = ondemand *******
 pm = ondemand
+
+; pm.max_children = all_memory_for_php/mem_per_process (using htop monitor)
+; example pm.max_children = 2700MB/20MB 
 pm.max_children = 135
 
 ; Default 10s
 pm.process_idle_timeout = 10s
 
-; Default Unlimited
-pm.max_requests = 600
 ```
 - [x] Set open file descriptor rlimit (Default Value: system defined value)
 ```
