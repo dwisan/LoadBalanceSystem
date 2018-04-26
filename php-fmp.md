@@ -23,4 +23,5 @@ pm.max_requests = 600
 pm = ondemand
 pm.max_children = 135
 pm.process_idle_timeout = 10s
+pm.max_requests = 600
 ```
