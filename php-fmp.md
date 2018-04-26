@@ -1,7 +1,5 @@
 > PHP-FPM 7.0 on Ubuntu 16.04.4 
 ```
-****** case : pm = dynamic *******
-
 # nano /etc/php/7.0/fpm/pool.d/www.conf
 
 ;listen = /run/php/php7.0-fpm.sock
@@ -9,6 +7,7 @@ listen = 127.0.0.1:2999
 
 listen.allowed_clients = 127.0.0.1
 
+****** case : pm = dynamic *******
 pm = dynamic
 
 ; pm.max_children = all_memory - 1024/mem_per_process using htop monitor
