@@ -1,4 +1,5 @@
-> PHP-FPM 7.0 on Ubuntu 16.04.4 
+> PHP-FPM 7.0 on Ubuntu 16.04.4
+- [x] edit pool named 'www'
 ```
 # nano /etc/php/7.0/fpm/pool.d/www.conf
 
@@ -24,4 +25,9 @@ pm = ondemand
 pm.max_children = 135
 pm.process_idle_timeout = 10s
 pm.max_requests = 600
+```
+- [x] Set open file descriptor rlimit (Default Value: system defined value)
+```
+ [x] System Defined value checking
+ 
 ```
