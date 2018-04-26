@@ -25,7 +25,7 @@ catch_workers_output = yes
 ****** case : pm = dynamic *******
 pm = dynamic
 
-; pm.max_children = all_memory_for_php/mem_per_process (using htop monitor)
+; pm.max_children = all_memory_for_php/mem_per_process (using htop)
 ; example pm.max_children = 2700MB/20MB 
 pm.max_children = 135
 
