@@ -18,12 +18,18 @@ pm.max_children = 135
 pm.start_servers = 30
 pm.min_spare_servers = 20
 pm.max_spare_servers = 40
+
+; Default Unlimited
 pm.max_requests = 600
 
 ****** case : pm = ondemand *******
 pm = ondemand
 pm.max_children = 135
+
+; Default 10s
 pm.process_idle_timeout = 10s
+
+; Default Unlimited
 pm.max_requests = 600
 ```
 - [x] Set open file descriptor rlimit (Default Value: system defined value)
