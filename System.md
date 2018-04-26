@@ -9,7 +9,14 @@
 or
 # cat /proc/sys/kernel/pid_max
 
+```
+>  maximum number of threads that can be created by a process under Linux
+```
+max_threads = totalram_pages / (8 * 8192 / 4096);
+
+# sysctl kernel.threads-max
 # cat /proc/sys/kernel/threads-max
+
 ```
 > /etc/security/limit.conf
 
