@@ -9,6 +9,8 @@ listen = 127.0.0.1:2999
 listen.allowed_clients = 127.0.0.1
 
 ; Default Unlimited
+; recommanded : use ab tools to find 
+; which kills and respawns processes after handling a certain number of requests
 pm.max_requests = 600
 
 ;Default equal System Defined value
