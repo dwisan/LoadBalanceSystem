@@ -10,7 +10,7 @@ nano /etc/nginx/sites-enabled/default
 
 upstream mywebapp1 {
         
-        # ip_hash available to 3 octets of ip no same
+        # ip_hash available to 3 octets {hash with first 3 octets} of client'ip not same
         # not work on same subnet , work load to asign one backend server
         ip_hash;
 
