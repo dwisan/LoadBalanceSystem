@@ -12,6 +12,7 @@ upstream mywebapp1 {
         
         # ip_hash available to 3 octets {hash with first 3 octets} of client'ip not same
         # not work on same subnet , work load to asign one backend server
+        # may use "hash $request_uri consistent;" or "hash $remote_addr consistent;"
         ip_hash;
 
         server 172.18.111.151 max_fails=3 fail_timeout=60s;
