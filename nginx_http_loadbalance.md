@@ -9,7 +9,9 @@ apt-get install nginx php php-fpm
 nano /etc/nginx/sites-enabled/default
 
 upstream mywebapp1 {
-
+        
+        # ip_hash available to 3 octets of ip no same
+        # not work on same subnet , work load to asign one backend server
         ip_hash;
 
         server 172.18.111.151 max_fails=3 fail_timeout=60s;
