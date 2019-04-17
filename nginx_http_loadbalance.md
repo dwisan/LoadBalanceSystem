@@ -54,6 +54,7 @@ server {
 
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
+        fastcgi_param REMOTE_ADDR $http_x_real_ip;
         fastcgi_pass unix:/run/php/php7.0-fpm.sock;
     }
 
